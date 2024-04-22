@@ -1,51 +1,109 @@
-console.log("Hola Mundo desde archivo de javascript...");
+const testEdad = false;
+const testNotas = false;
+const testNotasLetras = testNotas;
+const testMeses = true;
 
-// Esto es un comentario
+if (testEdad) {
+    let edad = prompt("Que edad tenes?");
 
-// defino con var el identificador/nombre de una variable sin datos
-var numero1;
+    // que pasa si tiene menos de 18 años?
+    //    generar una alerta que NO puede comprar...
+    if (edad < 18) {
+        document.write("<h1>No podes comprar... sos menor..</h1>");
+    }
+    else {
+        // y si tiene 18 o mas?
+        // mostrar la listra de productos...
+        const myHTML = "<ul><li>Cerveza</li><li>Vino</li></ul>"
+        document.write(myHTML);
+    }
+} 
 
-//Defino otra variable con let asignandole un valor
-let numero2 = 1232123;
+if (testNotas) {
+    let nota = Number.parseInt(prompt("Que nota te sacaste?"));
 
-//Tipo const definiendo otro valor
-const numero3 = 3.1415;
+    /*
+    Si te sacaste entre 0 y 4 reprobado   - F
+    Si te sacaste entre 5 y 7 aprobado    - C
+    Si te sacaste entre 8 y 9 es muy bien - B
+    (nota < 10) y ademas (&&) (nota > 7)
 
-//Defino sin modificador de variable
-numero4 = 2134234;
+    Si te sacaste 10 es sobresaliente  - Tambien un A
+    */
 
-//Defino un numero con comillas
-const numero5 = '100';
+    /* if(nota === 10 ) {
+         document.write("Crack!");
+     } else if ( (nota < 10) && (nota > 7 )  ) {
+         document.write("Muy bien!");
+     } else if (  (nota < 8) && (nota > 4 ) ) {
+         document.write("aprobado");
+     } else if (  (nota < 5) && (nota >= 0  ) ){
+         document.write("reprobado");
+     } else {
+         document.write("Dato invalido...")
+     }*/
 
-// ejemplo tipico con javascript
-const numero6 = '0';
+    switch (nota) {
+        case 10:
+            document.write("Crack!");
+            break;
+        case 9:
+        case 8:
+            document.write("Muy bien!");
+            break;
+        case 7:
+        case 6:
+        case 5:
+            document.write("aprobado");
+            break;
+        case 4:
+        case 3:
+        case 2:
+        case 1:
+        case 0:
+            document.write("reprobado");
+            break;
+        default:
+            document.write("Dato invalido...");
+            break;
+    }
+} 
 
-const numero7 = 1;
 
-const numero8 = 0;
+if ( testNotasLetras) {
+    document.write("<br> <br><h4>nota con letras</h4><br>");
+    let nota = prompt("Que nota te sacaste? (letra)");
 
-const numero9 = 10;
+    switch (nota) {
+        case 'A':
+            document.write("Crack!");
+            break;
+        case 'B':
+            document.write("Muy bien!");
+            break;
+        case 'C':
+            document.write("aprobado");
+            break;
+        case 'F':
+            document.write("reprobado");
+            break;
+        default:
+            document.write("Dato invalido...");
+            break;
+    }
+}
 
-const numero10 = new Number(1234);
-const numero11 = 1234;
 
-const numero12 = new String('4123');
+if (testMeses) {
+    let month_number = Number.parseInt(prompt("Ingrese el numero del mes.."));
+    //Debo mostrar en pantalla... el nombre dle mes en funcion del numero...
+    if(month_number === 12) {
+        document.write("Diciembre")
+    } else if( month_number ===11){
 
-console.log(numero7 + numero6); // nos da 10 pero en string
-console.log(numero7 - numero6); //nos da 1 en number
-console.log(numero6 - numero7); // nos da -1 en number
-console.log( numero6 == numero8); //nos da true, verdadero
-console.log(numero9 == (numero7 + numero6 ));//Nos dara igual?
-console.log(typeof numero6);
-console.log(typeof numero7);
-console.log(typeof numero9);
-console.log(typeof numero10);
-console.log(typeof numero11);
+    } else if(month_number === 10){
 
-console.log(numero10);
-console.log(numero11);
-console.log(numero12);
+    }
 
-console.log(numero6 === numero8);// Nos da false.
-
-console.log(numero7 + Number.parseInt(numero6) ); // convierte numero6 a int y luego lo suma
+    // Escribir el codigo de seleccion de mese en switch case...
+}
