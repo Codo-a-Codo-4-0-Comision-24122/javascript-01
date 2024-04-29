@@ -9,3 +9,7 @@
 
 // Parte 3 preguntarle al usuario cuantos productos(cantidad)
 //expresarla en valor de precio + IVA y en moneda extranjera.
+
+// Parte 4 escribir una funcion de elevar al cubo un numero dado...
+
+// Parte 5 escribir una funcion que calcule fibonacci...

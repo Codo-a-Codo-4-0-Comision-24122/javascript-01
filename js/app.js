@@ -1,9 +1,12 @@
+import { validacionDatos, validarCorreo } from './libs.js';
+
 const testEdad = false;
 const testNotas = false;
 const testNotasLetras = testNotas;
 const testMeses = false;
 const testRepeticion = false;
-const testValidacionDatos = true;
+const testValidacionDatos = false;
+const testValidarEmail = true;
 
 if (testEdad) {
     let edad = prompt("Que edad tenes?");
@@ -184,6 +187,21 @@ if (testValidacionDatos) {
     validacionDatos();
 }
 
+//function dataValida equivalente
+const dataValida = () => {
+    alert("DAtos Validos...")
+}
+
+const datainvalida = () => {
+    alert("Datos INVALIDOS!!")
+}
+
+
+if (testValidarEmail) {
+   let email = prompt("Ingrese un correo electronico..");
+   validarCorreo(email, dataValida, datainvalida ); // Si es correcto me devuelve true
+} 
 
 /// Pasar todos los algoritmos dentro de las sentencias IF
 // a una funcion dentro de libs...
+
