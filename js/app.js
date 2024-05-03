@@ -1,4 +1,5 @@
 import { validacionDatos, validarCorreo } from './libs.js';
+import { dameDominioDeURL } from './funciones.js';
 
 const testEdad = false;
 const testNotas = false;
@@ -6,7 +7,7 @@ const testNotasLetras = testNotas;
 const testMeses = false;
 const testRepeticion = false;
 const testValidacionDatos = false;
-const testValidarEmail = true;
+const testValidarEmail = false;
 
 if (testEdad) {
     let edad = prompt("Que edad tenes?");
@@ -204,4 +205,12 @@ if (testValidarEmail) {
 
 /// Pasar todos los algoritmos dentro de las sentencias IF
 // a una funcion dentro de libs...
+
+let form = document.getElementById("principalForm");
+
+form.onsubmit = (target) => {
+    let name = document.getElementById("validationDefault01"); // me devuelve lo que tiene el input..
+    let dominio = dameDominioDeURL(name.value);
+    alert("Tu nombre es: " + name.value + " y el dominio es: " + dominio);
+}
 
